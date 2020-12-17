@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
-    public float speed = 1f;
+    private Vector3 touchPosition;
+    private Vector3 diretion;
+    public float moveSpeed = 1f;
+
     public float rotateSpeed = 1f;
     Rigidbody2D rb;
 
@@ -12,37 +15,22 @@ public class movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-     
     }
 
     void Update()
     {
-        float h = Input.GetAxis("Horizontal");
-
-        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+      if(Input.touchCount > 0)
         {
-            Touch touch = Input.touches[0];
-            h = touch.deltaPosition.x;
+            Touch touch = Input.GetTouch(0);
+            touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            touchPosition.z = 0;
+            touchPosition.y = 0;
+            diretion = (touchPosition - transform.position);
+            rb.velocity = new Vector2(diretion.x, 0) * moveSpeed;
+
+            if (touch.phase == TouchPhase.Ended)
+                rb.velocity = Vector2.zero;
+         
         }
-
-        if((h > 0 ) || (h < 0))
-        {
-            Vector3 tempVect = new Vector3(h, 0, 0);
-            tempVect = tempVect.normalized * speed * Time.deltaTime;
-
-            Vector3 newPos = rb.transform.position + tempVect;
-            checkBoundary(newPos);
-        }
-    }
-
-     void checkBoundary(Vector3 newPos)
-    {
-        Vector3 camViewPoint = Camera.main.WorldToScreenPoint(newPos);
-
-        camViewPoint.x = Mathf.Clamp(camViewPoint.x, 0.04f, 0.96f);
-
-        Vector3 finalPos = Camera.main.ViewportToWorldPoint(camViewPoint);
-        rb.MovePosition(finalPos);
     }
 }
