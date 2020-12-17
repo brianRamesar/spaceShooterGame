@@ -18,13 +18,31 @@ public class movement : MonoBehaviour
 
     void Update()
     {
-        float xMove = Input.GetAxisRaw("Horizontal");
+        float h = Input.GetAxis("Horizontal");
 
-        rb.velocity = new Vector2(xMove, rb.velocity.y).normalized * speed;
+        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            Touch touch = Input.touches[0];
+            h = touch.deltaPosition.x;
+        }
 
-        bool rightPress = Input.GetKeyDown("d");
+        if((h > 0 ) || (h < 0))
+        {
+            Vector3 tempVect = new Vector3(h, 0, 0);
+            tempVect = tempVect.normalized * speed * Time.deltaTime;
 
+            Vector3 newPos = rb.transform.position + tempVect;
+            checkBoundary(newPos);
+        }
     }
 
-   
+     void checkBoundary(Vector3 newPos)
+    {
+        Vector3 camViewPoint = Camera.main.WorldToScreenPoint(newPos);
+
+        camViewPoint.x = Mathf.Clamp(camViewPoint.x, 0.04f, 0.96f);
+
+        Vector3 finalPos = Camera.main.ViewportToWorldPoint(camViewPoint);
+        rb.MovePosition(finalPos);
+    }
 }
