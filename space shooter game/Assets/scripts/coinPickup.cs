@@ -1,26 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class coinPickup : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float coin = 0;
 
-    // Update is called once per frame
-    void Update()
+    public TextMeshProUGUI textCoins;
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(transform.position.y < -5)
+        if(other.transform.tag == "coin")
         {
-            Destroy(gameObject);
+            coin++;
+            textCoins.text = coin.ToString();
+            Destroy(other.gameObject);
         }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Destroy(gameObject);
     }
 }
