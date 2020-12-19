@@ -8,6 +8,10 @@ public class deployCoin : MonoBehaviour
     public GameObject coinPrefab;
     public float respawnTime = 1.0f;
 
+    public GameObject p1;
+    public GameObject p2;
+    float pos;
+
     void Start()
     {
         
@@ -16,7 +20,9 @@ public class deployCoin : MonoBehaviour
 
     private void Update()
     {
-        Instantiate(coinPrefab, new Vector3(-2, 7, 8), Quaternion.identity);
+        float pos = Random.Range(p1.transform.position.x, p2.transform.position.x);
+
+        Instantiate(coinPrefab, new Vector3(pos,7,8), Quaternion.identity);
     }
    
 }
