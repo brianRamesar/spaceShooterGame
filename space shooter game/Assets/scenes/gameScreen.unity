@@ -5083,7 +5083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 291.8, y: 643.2}
+  m_AnchoredPosition: {x: 257.3, y: 643.2}
   m_SizeDelta: {x: 54.276, y: 88.210815}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613357880
@@ -5258,8 +5258,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -59.5, y: -50}
+  m_SizeDelta: {x: 144.17383, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1086586052
 GameObject:
@@ -5295,8 +5295,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0000009536743}
-  m_SizeDelta: {x: 29.569519, y: 50}
+  m_AnchoredPosition: {x: -7.9, y: 0.5}
+  m_SizeDelta: {x: 143.46739, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1086586054
 MonoBehaviour:
@@ -5345,8 +5345,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 31.53
+  m_fontSizeBase: 31.53
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10632,6 +10632,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 5855691148242240924, guid: 189410484420c9847affc1061b50b9d0, type: 3}
   respawnTime: 1
+--- !u!1 &2146098756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146098758}
+  - component: {fileID: 2146098757}
+  m_Layer: 0
+  m_Name: coin spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2146098757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146098756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23884ec4a1882145b55aaa10725f745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 5855691148242240924, guid: 189410484420c9847affc1061b50b9d0, type: 3}
+  respawnTime: 1
+--- !u!4 &2146098758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146098756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.06, y: 6.57, z: 7.662539}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4413389541952110844
 PrefabInstance:
   m_ObjectHideFlags: 0
