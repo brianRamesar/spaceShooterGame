@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public GameObject coinPrefab;
+    public GameObject enemyPrefab;
+    private GameObject enemyInstance;
+
     public GameObject p1;
     public GameObject p2;
-    float pos;
+    private float pos;
 
     public float secondsBetSpawn;
     public float elapsedTime = 0.0f;
@@ -20,16 +22,24 @@ public class EnemySpawn : MonoBehaviour
 
     private void Update()
     {
-        float pos = Random.Range(p1.transform.position.x, p2.transform.position.x);
-
+        pos = Random.Range(p1.transform.position.x, p2.transform.position.x);
         elapsedTime += Time.deltaTime;
 
         if (elapsedTime > secondsBetSpawn)
         {
             elapsedTime = 0;
 
-            Instantiate(coinPrefab, new Vector3(pos, 7, 8), Quaternion.identity);
+            spawnEnemy();
+
+            
+
         }
+   
+    }
+
+    private void spawnEnemy()
+    {
+        enemyInstance = Instantiate(enemyPrefab, new Vector3(pos, 7, 8), Quaternion.identity);
 
 
     }
