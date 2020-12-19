@@ -16,7 +16,7 @@ public class deployCoin : MonoBehaviour
 
     private void Update()
     {
-        Instantiate(coinPrefab, new Vector3(-2, 6, 8), Quaternion.identity);
+        Instantiate(coinPrefab, new Vector3(-2, 7, 8), Quaternion.identity);
     }
    
 }
