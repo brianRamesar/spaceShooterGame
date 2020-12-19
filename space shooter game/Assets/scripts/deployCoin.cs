@@ -6,15 +6,16 @@ public class deployCoin : MonoBehaviour
 {
 
     public GameObject coinPrefab;
-    public float respawnTime = 1.0f;
-
     public GameObject p1;
     public GameObject p2;
     float pos;
 
+    public float secondsBetSpawn;
+    public float elapsedTime = 0.0f;
+
     void Start()
     {
-        
+     
     }
 
 
@@ -22,7 +23,16 @@ public class deployCoin : MonoBehaviour
     {
         float pos = Random.Range(p1.transform.position.x, p2.transform.position.x);
 
-        Instantiate(coinPrefab, new Vector3(pos,7,8), Quaternion.identity);
+        elapsedTime += Time.deltaTime;
+
+        if(elapsedTime > secondsBetSpawn)
+        {
+            elapsedTime = 0;
+
+            Instantiate(coinPrefab, new Vector3(pos, 7, 8), Quaternion.identity);
+        }
+
+        
     }
    
 }

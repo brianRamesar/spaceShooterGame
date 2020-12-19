@@ -5271,7 +5271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1030546111}
   m_Layer: 0
-  m_Name: obj1
+  m_Name: p1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10573,7 +10573,6 @@ GameObject:
   - component: {fileID: 1777840496}
   - component: {fileID: 1777840495}
   - component: {fileID: 1777840498}
-  - component: {fileID: 1777840499}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10678,22 +10677,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &1777840499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777840494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d23884ec4a1882145b55aaa10725f745, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 5855691148242240924, guid: 189410484420c9847affc1061b50b9d0, type: 3}
-  respawnTime: 1
-  p1: {fileID: 0}
-  p2: {fileID: 0}
 --- !u!1 &2146098756
 GameObject:
   m_ObjectHideFlags: 0
@@ -10724,9 +10707,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPrefab: {fileID: 5855691148242240924, guid: 189410484420c9847affc1061b50b9d0, type: 3}
-  respawnTime: 1
   p1: {fileID: 1030546110}
   p2: {fileID: 1081327511}
+  secondsBetSpawn: 10
+  elapsedTime: 0
 --- !u!4 &2146098758
 Transform:
   m_ObjectHideFlags: 0
