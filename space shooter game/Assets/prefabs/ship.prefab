@@ -9736,7 +9736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2493b7d1e78e6b47929a5263a428bbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  moveSpeed: 1
   rotateSpeed: 1
 --- !u!50 &4413389542851752719
 Rigidbody2D:
@@ -9766,7 +9766,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4413389542851752721}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
