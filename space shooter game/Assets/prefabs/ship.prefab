@@ -9639,6 +9639,7 @@ GameObject:
   - component: {fileID: 4413389542851752717}
   - component: {fileID: 4413389542851752719}
   - component: {fileID: 4413389542851752712}
+  - component: {fileID: 4762874362022510785}
   m_Layer: 0
   m_Name: ship
   m_TagString: Player
@@ -9737,6 +9738,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  leftCanon: {fileID: 0}
+  rightCanon: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+  bulletForce: 20
   rotateSpeed: 1
 --- !u!50 &4413389542851752719
 Rigidbody2D:
@@ -9785,6 +9790,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.31, y: 25.81}
   m_EdgeRadius: 0
+--- !u!114 &4762874362022510785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4413389542851752721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe1e1097aa513646ba6170ccd41a181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textCoins: {fileID: 0}
 --- !u!1 &4413389542962708991
 GameObject:
   m_ObjectHideFlags: 0
