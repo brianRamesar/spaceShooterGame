@@ -16,6 +16,6 @@ public class alienMovement : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, 3f, 8f),
-            1f * Time.deltaTime);
+            2f * Time.deltaTime);
     }
 }
