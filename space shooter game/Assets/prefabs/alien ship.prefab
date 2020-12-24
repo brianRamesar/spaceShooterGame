@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5195848918666972626}
   - component: {fileID: 5195848918666972621}
   - component: {fileID: 6167900955515613513}
-  - component: {fileID: -7901812854035370519}
   - component: {fileID: -2227182765939740868}
+  - component: {fileID: 5981330427868169746}
   m_Layer: 0
   m_Name: alien ship
   m_TagString: enemy
@@ -105,22 +105,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &-7901812854035370519
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5195848918666972620}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00000005960464, y: 0.31818283}
-  serializedVersion: 2
-  m_Radius: 0.96
 --- !u!114 &-2227182765939740868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,3 +117,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecb7b2e152b3a746a75472b1cb92021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &5981330427868169746
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5195848918666972620}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.7528687, y: 0.44199353}
+      - {x: -0.95262074, y: 0.43501282}
+      - {x: -1.0776498, y: 0.10710716}
+      - {x: -0.2666892, y: -0.19357544}
+      - {x: 0.2903741, y: -0.19325107}
+      - {x: 1.0418535, y: 0.106489}
