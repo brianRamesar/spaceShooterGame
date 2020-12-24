@@ -8,9 +8,6 @@ public class blowUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y > 7)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject, 3f);
     }
 }

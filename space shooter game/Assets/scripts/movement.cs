@@ -16,6 +16,10 @@ public class movement : MonoBehaviour
     public float rotateSpeed = 1f;
     Rigidbody2D rb;
 
+    private float timeBetShots;
+    public float startTimeBetShots;
+
+
     // Update is called once per frame
     void Start()
     {
@@ -26,6 +30,7 @@ public class movement : MonoBehaviour
     {
       if(Input.touchCount > 0)
         {
+
             Touch touch = Input.GetTouch(0);
             touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
             touchPosition.z = 0;
@@ -33,33 +38,21 @@ public class movement : MonoBehaviour
             diretion = (touchPosition - transform.position);
             rb.velocity = new Vector2(diretion.x, 0) * moveSpeed;
 
-            Shoot();
+            if(timeBetShots <= 0)
+            {
+                GameObject leftBullet = Instantiate(bulletPrefab, leftCanon.position, leftCanon.rotation);
+                GameObject rightBullet = Instantiate(bulletPrefab, rightCanon.position, leftCanon.rotation);
+                timeBetShots = startTimeBetShots;
+            }
+            else
+            {
+                timeBetShots -= Time.deltaTime;
+            }
 
             if (touch.phase == TouchPhase.Ended)
                 rb.velocity = Vector2.zero;
-         
+
         }
-
-      void Shoot()
-        {
-            GameObject leftBullet = Instantiate(bulletPrefab, leftCanon.position, leftCanon.rotation);
-            GameObject rightBullet = Instantiate(bulletPrefab, rightCanon.position, leftCanon.rotation);
-
-            Rigidbody2D rigidB = leftBullet.GetComponent<Rigidbody2D>();
-            rigidB.AddForce(leftCanon.up * bulletForce, ForceMode2D.Impulse);
-
-            Rigidbody2D rigidBr = rightBullet.GetComponent<Rigidbody2D>();
-            rigidBr.AddForce(rightCanon.up * bulletForce, ForceMode2D.Impulse);
-
-            if(leftBullet.transform.position.y > 7)
-            {
-                Destroy(leftBullet);
-            }
-
-            if (rightBullet.transform.position.y > 7)
-            {
-                Destroy(rightBullet);
-            }
-        }
+     
     }
 }

@@ -5284,7 +5284,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 818573891}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -5657,10 +5657,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1459504434}
   - {fileID: 1472871422}
   - {fileID: 613357879}
   - {fileID: 1018338998}
-  - {fileID: 1459504434}
   m_Father: {fileID: 1777840497}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5956,7 +5956,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 964249226}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 964249224}
+        m_TargetAssemblyTypeName: pauseMenu, Assembly-CSharp
+        m_MethodName: pauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &964249226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6024,7 +6036,7 @@ RectTransform:
   m_Children:
   - {fileID: 1086586053}
   m_Father: {fileID: 818573891}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -6352,7 +6364,7 @@ RectTransform:
   m_Children:
   - {fileID: 1880756457}
   m_Father: {fileID: 818573891}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6423,12 +6435,12 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472871421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 964249223}
   m_Father: {fileID: 818573891}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12090,6 +12102,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 8306545261298503045, guid: 80f53d907cac228489a8b74ad58ad1b7, type: 3}
+    - target: {fileID: 4413389542851752717, guid: 2ea60f8d5a7dcd64caab5f9bdf543ac9, type: 3}
+      propertyPath: startTimeBetShots
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4413389542851752721, guid: 2ea60f8d5a7dcd64caab5f9bdf543ac9, type: 3}
       propertyPath: m_Name
       value: ship
