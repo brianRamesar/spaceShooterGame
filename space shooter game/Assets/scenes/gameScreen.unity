@@ -12101,10 +12101,10 @@ PrefabInstance:
     - target: {fileID: 4413389542851752717, guid: 2ea60f8d5a7dcd64caab5f9bdf543ac9, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 8306545261298503045, guid: 80f53d907cac228489a8b74ad58ad1b7, type: 3}
+      objectReference: {fileID: 100531014234308510, guid: 05e2e3ba82f451449babab6d0088f4b1, type: 3}
     - target: {fileID: 4413389542851752717, guid: 2ea60f8d5a7dcd64caab5f9bdf543ac9, type: 3}
       propertyPath: startTimeBetShots
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4413389542851752721, guid: 2ea60f8d5a7dcd64caab5f9bdf543ac9, type: 3}
       propertyPath: m_Name

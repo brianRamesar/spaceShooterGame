@@ -11,7 +11,6 @@ public class movement : MonoBehaviour
     public Transform leftCanon;
     public Transform rightCanon;
     public GameObject bulletPrefab;
-    public float bulletForce = 20f;
 
     public float rotateSpeed = 1f;
     Rigidbody2D rb;
