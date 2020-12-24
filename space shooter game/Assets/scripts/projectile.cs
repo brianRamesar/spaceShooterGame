@@ -8,6 +8,8 @@ public class projectile : MonoBehaviour
     public float lifeTime;
 
     public float distance;
+    public int damage;
+
     private void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
@@ -20,8 +22,9 @@ public class projectile : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("enemy"))
             {
-                Debug.Log("alien hit");
                 DestroyProjectile();
+
+                hitInfo.collider.GetComponent<alienMovement>().takeDamage(damage);
             }
         }
 

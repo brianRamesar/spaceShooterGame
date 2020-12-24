@@ -97,3 +97,4 @@ MonoBehaviour:
   speed: 10
   lifeTime: 3
   distance: 0.4
+  damage: 1
