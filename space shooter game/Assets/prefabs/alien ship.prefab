@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &334332137512427739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2637808687844373287}
+  m_Layer: 0
+  m_Name: enemyCanon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2637808687844373287
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334332137512427739}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.309, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5195848918666972627}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5195848918666972620
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +43,7 @@ GameObject:
   - component: {fileID: 5195848918666972621}
   - component: {fileID: 6167900955515613513}
   - component: {fileID: -2227182765939740868}
-  - component: {fileID: 5981330427868169746}
+  - component: {fileID: 4522377593706527924}
   m_Layer: 0
   m_Name: alien ship
   m_TagString: enemy
@@ -29,9 +59,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5195848918666972620}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.12, y: 6.99, z: 8.41}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
-  m_Children: []
+  m_Children:
+  - {fileID: 2637808687844373287}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -53,7 +84,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -117,9 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecb7b2e152b3a746a75472b1cb92021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
---- !u!60 &5981330427868169746
-PolygonCollider2D:
+  health: 25
+  bombPrefab: {fileID: 3182922528019471944, guid: 1a46037294d44e5469ff8c4bdb8a918e, type: 3}
+  enemyCanon: {fileID: 2637808687844373287}
+  startTimeBetShots: 4
+  matRed: {fileID: 2100000, guid: 83182d0c8b2ce6b45ba333be3d9ff0ef, type: 2}
+--- !u!58 &4522377593706527924
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -131,21 +166,6 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.7528687, y: 0.44199353}
-      - {x: -0.95262074, y: 0.43501282}
-      - {x: -1.0776498, y: 0.10710716}
-      - {x: -0.2666892, y: -0.19357544}
-      - {x: 0.2903741, y: -0.19325107}
-      - {x: 1.0418535, y: 0.106489}
+  m_Offset: {x: 0, y: 0.44}
+  serializedVersion: 2
+  m_Radius: 0.96966016

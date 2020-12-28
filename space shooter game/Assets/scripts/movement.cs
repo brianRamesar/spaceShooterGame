@@ -8,6 +8,8 @@ public class movement : MonoBehaviour
     private Vector3 diretion;
     public float moveSpeed = 1f;
 
+    public float health;
+
     public Transform leftCanon;
     public Transform rightCanon;
     public GameObject bulletPrefab;
@@ -18,11 +20,18 @@ public class movement : MonoBehaviour
     private float timeBetShots;
     public float startTimeBetShots;
 
+    public Material matRed;
+    private Material matDefault;
+
+    private Renderer rend;
 
     // Update is called once per frame
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        rend = GetComponent<Renderer>();
+        matDefault = rend.material;
     }
 
     void Update()
@@ -52,6 +61,33 @@ public class movement : MonoBehaviour
                 rb.velocity = Vector2.zero;
 
         }
-     
+
+
+    }
+
+    
+
+    private void matReset()
+    {
+        rend.material = matDefault;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "enemyBullet")
+        {
+            health--;
+
+            rend.material = matRed;
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Invoke("matReset", .1f);
+            }
+        }
     }
 }

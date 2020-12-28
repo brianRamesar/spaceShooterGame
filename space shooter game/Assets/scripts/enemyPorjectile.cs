@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class projectile : MonoBehaviour
+public class enemyPorjectile : MonoBehaviour
 {
     public float speed;
     public float lifeTime;
     public float distance;
     public int damage;
-
-    private void Start()
+    void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
     }
+
+    // Update is called once per frame
     private void Update()
     {
-        transform.Translate(Vector2.up * speed * Time.deltaTime); 
+        transform.Translate(Vector2.down * speed * Time.deltaTime);
     }
 
     void DestroyProjectile()
@@ -25,7 +26,7 @@ public class projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "enemy")
+        if (other.gameObject.tag == "player")
         {
             DestroyProjectile();
 
