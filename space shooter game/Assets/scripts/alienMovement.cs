@@ -17,6 +17,8 @@ public class alienMovement : MonoBehaviour
 
     private Renderer rend;
 
+    public GameObject deathParticle;
+
 
     void Start()
     {
@@ -66,6 +68,8 @@ public class alienMovement : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
+
+                Instantiate(deathParticle, transform.position, transform.rotation);
             }
             else
             {

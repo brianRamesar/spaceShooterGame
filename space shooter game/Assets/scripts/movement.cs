@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class movement : MonoBehaviour
 {
+    private float coin = 0;
+
     private Vector3 touchPosition;
     private Vector3 diretion;
     public float moveSpeed = 1f;
@@ -59,10 +60,7 @@ public class movement : MonoBehaviour
 
             if (touch.phase == TouchPhase.Ended)
                 rb.velocity = Vector2.zero;
-
         }
-
-
     }
 
     
