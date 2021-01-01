@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 public class movement : MonoBehaviour
 {
-    private float coin = 0;
 
     private Vector3 touchPosition;
     private Vector3 diretion;

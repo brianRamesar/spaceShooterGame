@@ -148,12 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ecb7b2e152b3a746a75472b1cb92021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 25
   bombPrefab: {fileID: 3182922528019471944, guid: 1a46037294d44e5469ff8c4bdb8a918e, type: 3}
   enemyCanon: {fileID: 2637808687844373287}
   startTimeBetShots: 4
   matRed: {fileID: 2100000, guid: 83182d0c8b2ce6b45ba333be3d9ff0ef, type: 2}
   deathParticle: {fileID: 4237493714416910747, guid: 4fc1daabe1f23db44ab6375cf13e57c8, type: 3}
+  health: 25
 --- !u!58 &4522377593706527924
 CircleCollider2D:
   m_ObjectHideFlags: 0

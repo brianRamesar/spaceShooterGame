@@ -1,10 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class alienMovement : MonoBehaviour
 {
-    public int health;
 
     public GameObject bombPrefab;
     public Transform enemyCanon;
@@ -19,11 +17,14 @@ public class alienMovement : MonoBehaviour
 
     public GameObject deathParticle;
 
+    public float health;
+
 
     void Start()
     {
         rend = GetComponent<Renderer>();
         matDefault = rend.material;
+
     }
 
     // Update is called once per frame
@@ -68,6 +69,8 @@ public class alienMovement : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
+
+                scoreCounter.scoreVal += 1;
 
                 Instantiate(deathParticle, transform.position, transform.rotation);
             }
