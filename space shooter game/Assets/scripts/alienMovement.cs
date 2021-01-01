@@ -76,7 +76,7 @@ public class alienMovement : MonoBehaviour
             }
             else
             {
-                Invoke("matReset", .1f);
+                Invoke("matReset", .05f);
             }
         }
     }
