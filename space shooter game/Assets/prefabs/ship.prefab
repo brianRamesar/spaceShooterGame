@@ -14612,7 +14612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  health: 0
+  health: 3
   leftCanon: {fileID: 2299659273588113415}
   rightCanon: {fileID: 2299659273112614908}
   bulletPrefab: {fileID: 100531014234308510, guid: 05e2e3ba82f451449babab6d0088f4b1, type: 3}
